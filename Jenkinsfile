@@ -39,7 +39,7 @@ pipeline {
     }
 
     environment {
-        APPLICATION_NAME = "eureka3"
+        APPLICATION_NAME = "product"
         // SONAR_EUREKA2_URL = "http://54.252.136.132:9000"
         // SONAR_EUREKA2_TOKEN = credentials('eureka2_token')
         POM_VERSION = readMavenPom().getVersion()
@@ -122,7 +122,7 @@ pipeline {
                 //echo "it will fail now as running the same port to create container"
                script{
                      imageValidation().call()
-                    dockerDeploy('dev', '5761').call()
+                    dockerDeploy('dev', '5132').call()
                } 
             }
          }
@@ -155,7 +155,7 @@ pipeline {
                 //     }
                     imageValidation().call()
 
-                    dockerDeploy('Test', '6761').call()
+                    dockerDeploy('Test', '6132').call()
                } 
             }
          } 
@@ -177,7 +177,7 @@ pipeline {
               
                script{
                     imageValidation().call()
-                    dockerDeploy('Stage', '7761').call()
+                    dockerDeploy('Stage', '7132').call()
                } 
             }
          } 

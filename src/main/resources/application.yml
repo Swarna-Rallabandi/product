@@ -32,9 +32,10 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    password: Gcp@2024 # cipher
-    url: jdbc:mysql://104.197.94.65:3306/learnerCrownClothing?useSSL=FALSE
     username: appdb
+    password: Appdb@123 # cipher
+    url: jdbc:mysql://project-db.c7i8oswa0w2a.ap-southeast-2.rds.amazonaws.com:3306/learnercrownclothing?useSSL=false&allowPublicKeyRetrieval=true
+    
   jpa:
     hibernate:
       ddl-auto: update
@@ -46,4 +47,4 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://34.48.255.154:5761/eureka/
+      defaultZone: http://15.135.36.164:5761/eureka/
