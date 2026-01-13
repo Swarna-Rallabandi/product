@@ -6,7 +6,7 @@ WORKDIR /opt/i27
 
 ARG JAR_SOURCE  
 
-COPY ["${JAR_SOURCE}", "/opt/i27/i27-product.jar"]
+COPY ["${JAR_PATH}", "/opt/i27/i27-product.jar"]
 
 EXPOSE 8132
 
