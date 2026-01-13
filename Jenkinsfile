@@ -195,10 +195,10 @@ pipeline {
             }
             steps {
                 timeout(time: 300, unit: 'SECONDS'){
-                input message : "deploying Eureka to production ?", ok: 'yes' , submitter: 'sre, swarna'
+                input message : "deploying ${env.APPLICATION_NAME} to production ?", ok: 'yes' , submitter: 'sre, swarna'
             }
                script{
-                    dockerDeploy('prod', '8761').call()
+                    dockerDeploy('prod', '8132').call()
                } 
             }
          } 
@@ -260,7 +260,7 @@ def buildApp(){
                     }
                    
                     //create the conatiner again
-                    sh "docker run --name ${env.APPLICATION_NAME}-$envDeploy -d -p $port -t ${env.DOCKER_HUB}/${env.APPLICATION_NAME}:${GIT_COMMIT}"
+                    sh "docker run --name ${env.APPLICATION_NAME}-$envDeploy -d -p ${port}:8232 -t ${env.DOCKER_HUB}/${env.APPLICATION_NAME}:${GIT_COMMIT}"
                 }
     }
  }
